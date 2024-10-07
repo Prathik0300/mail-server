@@ -6,7 +6,7 @@ class Configurator:
     def __init__(self,ENV):
         self.env = ENV
     
-    def load_config(self) -> dict:
+    def load_config(self):
         try:
             deployment_env = os.getenv(self.env, 'development')
             config_file = f'{deployment_env}.env'

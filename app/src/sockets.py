@@ -2,7 +2,7 @@ import socket
 import ssl
 
 class SocketHandler:
-    def __init__(self, config=None) -> None:
+    def __init__(self, config) -> None:
         self.host = config['HOST']
         self.port = config['PORT']
         self.use_ssl = config['USE_SSL']

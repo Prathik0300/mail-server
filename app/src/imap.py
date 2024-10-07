@@ -26,10 +26,10 @@ class IMAPServer:
                         self.handle_list()
                         break
                     case 'SELECT':
-                        self.handle_select()
+                        self.handle_select(data)
                         break
                     case 'FETCH':
-                        self.handle_fetch()
+                        self.handle_fetch(data)
                         break
                     case 'LOGOUT':
                         self.handle_logout()
@@ -38,7 +38,7 @@ class IMAPServer:
                         self.connection.send(b'* BAD Unknown command\r\n')
                         break
             except Exception:
-                logger().error(Exception)
+                logger().error(f'{Exception}')
         
     def handle_login(self):
         self.connection.send(b'* OK LOGIN completed\r\n')

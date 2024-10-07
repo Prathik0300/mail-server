@@ -23,7 +23,7 @@ class Email:
                 server.sendmail(self.sender_email, recipient_email, message.as_string())
                 print("Email sent from {} to {}.".format(self.sender_email, recipient_email))
         except Exception:
-            logger().error(Exception)
+            logger().error(f'{Exception}')
 
 def email_service(config):
     return Email(config)
